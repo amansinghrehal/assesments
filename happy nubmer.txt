@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int a,i=0,j;
+    
+    scanf("%d",&a);
+    int temp,r,num,flag=1;
+    
+    int *arr = (int *)malloc(10 * sizeof(int));
+    
+    temp=a;
+    int m;
+    while(1)
+    {
+        num=0;
+        while(temp)
+        {
+            m=temp%10;
+            num=num+(m*m);
+            temp=temp/10;
+        }
+        printf("%d\n",num);
+        temp=num;
+        arr[i]=temp;
+        if(temp==1)
+        {
+            printf("happy nubmer");
+            return 0;
+        }
+        for(j=0;j<i;j++)
+        {
+            if(temp==arr[j])
+            {
+                printf("unhappy nubmer");
+                return 0;
+            }
+        }
+        i++;
+    }
+}

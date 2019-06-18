@@ -1,0 +1,225 @@
+#include<stdio.h>
+#include<stdlib.h>
+void RowNumbers()
+{
+     int i;
+    int a=1,c=1,j;
+    for(i=1;i<=5;i++)
+    {
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        for(j=0;j<c;j++)
+        {
+            printf("%d",a);
+        }
+    
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        printf("\n");
+        a++;
+        c+=2;
+    }
+    
+}
+
+void RowNumbersBackwards()
+{
+     int i;
+    int a=5,c=1,j;
+    for(i=1;i<=5;i++)
+    {
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        for(j=0;j<c;j++)
+        {
+            printf("%d",a);
+        }
+    
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        printf("\n");
+        a--;
+        c+=2;
+    }
+}
+
+void UpDownNubmers()
+{
+	 
+    int i;
+    int a=1,c=1,j;
+    for(i=1;i<=5;i++)
+    {
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        
+        for(j=0;j<i-1;j++)
+        {
+            printf("%d",a++);
+        }
+        
+        printf("%d",a);
+        
+        for(j=0;j<i-1;j++)
+        {
+            printf("%d",--a);
+        }
+        
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        printf("\n");
+    }
+}
+
+void UpNubmersDownAplhabets()
+{
+    int i;
+    int a=1,c=1,j;
+    for(i=1;i<=5;i++)
+    {
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        
+        for(j=0;j<i-1;j++)
+        {
+            printf("%d",a++);
+        }
+        
+        printf("%d",a);
+        
+        for(j=0;j<i-1;j++)
+        {
+            printf("%c",--a+64);
+        }
+        
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        printf("\n");
+    }
+}
+
+
+void AlphaNumericAlternate()
+{
+    int i;
+    int a=1,c=1,j,n=6;
+    for(i=1;i<=n;i++)
+    {
+        for(j=0;j<n-i;j++)
+        {
+            printf(" ");
+        }
+        
+        for(j=0;j<i-1;j++)
+        {
+            if(a%2==0)
+                printf("%d",a++);
+            else
+                printf("%c",(a++)+64);
+        }
+        
+        if(a%2==0)
+            printf("%d",a);
+        else
+            printf("%c",a+64);
+        
+        for(j=0;j<i-1;j++)
+        {
+            --a;
+            if(a%2==0)
+                printf("%d",a);
+            else
+                printf("%c",a+64);
+        }
+        
+        for(j=0;j<n-i;j++)
+        {
+            printf(" ");
+        }
+        printf("\n");
+    }
+}
+
+void Consecutiveseries()
+{
+
+    int i;
+    int a=1,c=1,j,n=6;
+    for(i=1;i<=n;i++)
+    {
+        for(j=0;j<n-i;j++)
+        {
+            printf(" ");
+        }
+        for(j=0;j<c;j++)
+        {
+            printf("%d",a%10);
+            a++;
+        }
+    
+        for(j=0;j<n-i;j++)
+        {
+            printf(" ");
+        }
+        printf("\n");
+        c+=2;
+    }
+}
+int main()
+{
+    
+    int choice;
+    while(1)
+    {
+         printf("-----------------------\n** MAIN MENU **\n----------------------\n\n");
+        printf("1. Row Numbers\n2. Row Numbers Backwards\n3. Up Down Nubmers\n4. Up Nubmers Down Aplhabets\n5. Alpha Numeric Alternate\n6. Consecutive series\n7. Row Nubmer Up Down\n8. Diamond Aplha Nubmeric\n9. diamond Alpha Star\n 10. Set Row_Level\n 0. Exit\n\n");
+        
+        printf("enter yout option (1 to 10)\n");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1 : RowNumbers();
+                break;
+                
+            case 2: RowNumbersBackwards();
+                break;
+            case 3: UpDownNubmers();
+                break;
+            case 4: UpNubmersDownAplhabets();
+                break;
+            case 5: AlphaNumericAlternate();
+                break;
+            case 6 : Consecutiveseries();
+                break;
+          /*  case 7: RowNubmerUpDown();
+                break;
+            case 8: DiamondAplhaNubmeric();
+                break; 
+            case 9:  diamondAlphaStar();
+                break;
+            case 10: SetRow_Level();
+                break;
+                */
+            case 0: exit(0);
+            
+            default: printf("you have entered wrong choice");
+        }
+    }
+   
+}
