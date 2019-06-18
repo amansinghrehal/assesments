@@ -181,6 +181,201 @@ void Consecutiveseries()
         c+=2;
     }
 }
+
+void RowNubmerUpDown()
+{
+    int n=6,i,j;
+    int a=1,c,temp;
+    for(i=1;i<=6;i++)
+    {
+        for(j=1;j<=n-i;j++)
+        {
+            printf(" ");
+        }
+        
+        c=i;
+        for(j=1;j<=i-1;j++)
+        {
+            if(c>=10)
+            {
+                printf("%d",(c++)%10+1);
+            }
+            else
+            {
+                 printf("%d",c++);
+            }
+           
+        }
+        
+        if(c>=10)
+        {
+            printf("%d",c%10+1);
+        }
+        else
+            printf("%d",c);
+        
+        for(j=1;j<=i-1;j++)
+        {
+            if(--c>=10)
+            {
+                printf("%d",c%10+1);
+            }
+            else
+            {
+                printf("%d",c);
+            }
+        }
+        
+        for(j=1;j<=n-i;j++)
+        {
+            printf(" ");
+        }
+        
+        printf("\n");
+    }
+}
+
+
+void RowNubmerUpDown() 
+{
+    int i;
+    int c=1,j;
+    for(i=1;i<=5;i++)
+    {
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        for(j=0;j<c;j++)
+        {
+            printf("%d",i);
+        }
+    
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        printf("\n");
+        c+=2;
+    }
+    c-=4;
+    
+    for(i=4;i>=1;i--)
+    {
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        for(j=0;j<c;j++)
+        {
+            printf("%c",i+64);
+        }
+    
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        printf("\n");
+        c-=2;
+    }
+    
+}
+
+void DiamondAplhaNubmeric()
+{
+    int i;
+    int c=1,j;
+    for(i=1;i<=5;i++)
+    {
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        for(j=0;j<c;j++)
+        {
+            printf("%d",i);
+        }
+    
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        printf("\n");
+        c+=2;
+    }
+    c-=4;
+    
+    for(i=4;i>=1;i--)
+    {
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        for(j=0;j<c;j++)
+        {
+            printf("%c",i+64);
+        }
+    
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        printf("\n");
+        c-=2;
+    }
+    
+}
+void diamondAlphaStar() 
+{
+     int i;
+    int a,c=1,j;
+    for(i=1;i<=5;i++)
+    {
+        a=1;
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        for(j=0;j<i;j++)
+        {
+            printf("%d",a++);
+        }
+        
+        for(j=0;j<i-1;j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+     
+    }
+    
+    int val;
+   for(i=4;i>=1;i--)
+    {
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        for(j=0;j<i-1;j++)
+        {
+            printf("*");
+        }
+    
+        val=i;
+        for(j=0;j<i;j++)
+        {
+            printf("%d",val--);
+        }
+        
+        for(j=0;j<5-i;j++)
+        {
+            printf(" ");
+        }
+        printf("\n");
+      
+    }
+}
+
 int main()
 {
     
@@ -207,15 +402,15 @@ int main()
                 break;
             case 6 : Consecutiveseries();
                 break;
-          /*  case 7: RowNubmerUpDown();
+            case 7: RowNubmerUpDown();
                 break;
-            case 8: DiamondAplhaNubmeric();
+           case 8: DiamondAplhaNubmeric();
                 break; 
             case 9:  diamondAlphaStar();
                 break;
             case 10: SetRow_Level();
                 break;
-                */
+                
             case 0: exit(0);
             
             default: printf("you have entered wrong choice");
