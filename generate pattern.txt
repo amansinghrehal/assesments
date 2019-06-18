@@ -1,12 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
+int muNum=5;
 void RowNumbers()
 {
      int i;
     int a=1,c=1,j;
-    for(i=1;i<=5;i++)
+    for(i=1;i<=muNum;i++)
     {
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -15,7 +16,7 @@ void RowNumbers()
             printf("%d",a);
         }
     
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -30,9 +31,9 @@ void RowNumbersBackwards()
 {
      int i;
     int a=5,c=1,j;
-    for(i=1;i<=5;i++)
+    for(i=1;i<=muNum;i++)
     {
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -41,7 +42,7 @@ void RowNumbersBackwards()
             printf("%d",a);
         }
     
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -56,9 +57,9 @@ void UpDownNubmers()
 	 
     int i;
     int a=1,c=1,j;
-    for(i=1;i<=5;i++)
+    for(i=1;i<=muNum;i++)
     {
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -75,7 +76,7 @@ void UpDownNubmers()
             printf("%d",--a);
         }
         
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -87,9 +88,9 @@ void UpNubmersDownAplhabets()
 {
     int i;
     int a=1,c=1,j;
-    for(i=1;i<=5;i++)
+    for(i=1;i<=muNum;i++)
     {
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -106,7 +107,7 @@ void UpNubmersDownAplhabets()
             printf("%c",--a+64);
         }
         
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -119,9 +120,9 @@ void AlphaNumericAlternate()
 {
     int i;
     int a=1,c=1,j,n=6;
-    for(i=1;i<=n;i++)
+    for(i=1;i<=muNum;i++)
     {
-        for(j=0;j<n-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -148,7 +149,7 @@ void AlphaNumericAlternate()
                 printf("%c",a+64);
         }
         
-        for(j=0;j<n-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -161,9 +162,9 @@ void Consecutiveseries()
 
     int i;
     int a=1,c=1,j,n=6;
-    for(i=1;i<=n;i++)
+    for(i=1;i<=muNum;i++)
     {
-        for(j=0;j<n-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -173,7 +174,7 @@ void Consecutiveseries()
             a++;
         }
     
-        for(j=0;j<n-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -186,9 +187,9 @@ void RowNubmerUpDown()
 {
     int n=6,i,j;
     int a=1,c,temp;
-    for(i=1;i<=6;i++)
+    for(i=1;i<=muNum;i++)
     {
-        for(j=1;j<=n-i;j++)
+        for(j=1;j<=muNum-i;j++)
         {
             printf(" ");
         }
@@ -226,7 +227,7 @@ void RowNubmerUpDown()
             }
         }
         
-        for(j=1;j<=n-i;j++)
+        for(j=1;j<=muNum-i;j++)
         {
             printf(" ");
         }
@@ -242,9 +243,9 @@ void DiamondAplhaNubmeric()
 {
     int i;
     int c=1,j;
-    for(i=1;i<=5;i++)
+    for(i=1;i<=muNum;i++)
     {
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -253,7 +254,7 @@ void DiamondAplhaNubmeric()
             printf("%d",i);
         }
     
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -262,9 +263,9 @@ void DiamondAplhaNubmeric()
     }
     c-=4;
     
-    for(i=4;i>=1;i--)
+    for(i=muNum-1;i>=1;i--)
     {
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -273,7 +274,7 @@ void DiamondAplhaNubmeric()
             printf("%c",i+64);
         }
     
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -286,10 +287,10 @@ void diamondAlphaStar()
 {
      int i;
     int a,c=1,j;
-    for(i=1;i<=5;i++)
+    for(i=1;i<=muNum;i++)
     {
         a=1;
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -307,9 +308,9 @@ void diamondAlphaStar()
     }
     
     int val;
-   for(i=4;i>=1;i--)
+   for(i=muNum-1;i>=1;i--)
     {
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
@@ -324,13 +325,19 @@ void diamondAlphaStar()
             printf("%d",val--);
         }
         
-        for(j=0;j<5-i;j++)
+        for(j=0;j<muNum-i;j++)
         {
             printf(" ");
         }
         printf("\n");
       
     }
+}
+
+void SetRow_Level()
+{
+    printf("please enter nubmer of rows to be printed in the pattern\n");
+    scanf("%d",&muNum);
 }
 
 int main()
@@ -365,8 +372,8 @@ int main()
                 break; 
             case 9:  diamondAlphaStar();
                 break;
-          //  case 10: SetRow_Level();
-          //      break;
+            case 10: SetRow_Level();
+                break;
                 
             case 0: exit(0);
             
