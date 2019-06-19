@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<string.h>
+
+void myStrIntcat(char *str1, int num, char *str2, char *str3)
+{
+    const int len=strlen(str1)+strlen(str2)+10+1;
+    char str4[10];
+    
+    sprintf(str4,"%d",num);
+    char str5[len];
+    str3="aman";
+    sprintf(str5,"%s%s%s",str1,str4,str2);
+    
+    str3=str5;
+    printf("%s",str3);
+    
+}
+int main()
+{
+    char a[10]="aman singh";
+    myStrIntcat("aman",1234, "singh", "asd");
+   
+}
