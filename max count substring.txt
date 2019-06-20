@@ -1,0 +1,130 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+int main()
+{
+    unsigned int len_max = 128;
+    unsigned int current_size = 0;
+    char *pStr = malloc(len_max);
+    current_size = len_max;
+
+    printf("\n enter the string \n");
+
+    if(pStr != NULL)
+    {
+        int c = EOF;
+        unsigned int i =0;
+
+        while (( c = getchar() ) != '\n' && c != EOF)
+        {
+                pStr[i++]=(char)c;
+
+
+                if(i == current_size)
+                {
+                current_size = i+len_max;
+                        pStr = realloc(pStr, current_size);
+                }
+        }
+
+        pStr[i] = '\0';
+
+        printf("\nLong String value:%s \n\n",pStr);
+
+    }
+
+
+
+    int strSize, arrSize=1;
+
+
+    printf("enter the length of substring\n");
+    scanf("%d",&strSize);
+
+    int arrLength=arrSize*(strSize+1);
+
+    char *arr=(char*)malloc(arrLength);
+    char **str=(char**)malloc(sizeof(*str)*arrSize);
+
+
+    int i;
+    for(i=0;i<arrSize;i++)
+    {
+        str[i]=&arr[i*(strSize+1)];
+    }
+    i=0;
+    int k=0,l=0,m=0,c=0;
+    while(pStr[i]!='\0' && pStr[i]!=EOF)
+    {
+        str[l][k]=pStr[i];
+        i++;
+        k++;
+       // printf("%s\n",str[l]);
+       // printf("hello first\n");
+        if(i>=(arrLength-arrSize))
+        {
+          //  printf("hello\n");
+            arrSize+=40;
+            arrLength=arrSize*(strSize+1);
+
+
+            arr=realloc(arr,arrSize*(strSize+1));
+          //  printf("hello again");
+            str=realloc(str,sizeof(*str)*(arrSize));
+
+            for(c=l;c<arrSize;c++)
+            {
+                str[c]=&arr[c*(strSize+1)];
+            }
+        }
+       // printf("%d\n",++c);
+        if(k==strSize)
+        {
+            str[l][k]='\0';
+            l++;
+            k=0;
+            i=i-strSize+1;
+        }
+    }
+
+    l--;
+
+    char  *result;
+    k=0;
+    int max=0,count=0;
+    printf("\n length is %d\n",l);
+    printf("\n\nactual output start from here\n\n");
+    for(i=0;i<l;i++)
+    {
+        if(str[i]!="\0")
+        {
+                c=0;
+                count=0;
+                for(k=i+1;k<=l;k++)
+                {
+                     //printf("%s\t%s\n",str[i],str[k]);
+                     printf("%d",++count);
+                        if(!strcmp(str[i],str[k]))
+                        {
+                            printf("\tequal string is %s\n",str[i]);
+                                str[k]="\0";
+                                c++;
+                        }
+                }
+                if(max<c)
+                {
+                        max=c;
+                        result=str[i];
+                }
+        }
+
+    }
+    
+
+    printf("\n%s  : %d",result,max+1);
+
+        free(pStr);
+        free(arr);
+        free(str);
+}                                                                                       
