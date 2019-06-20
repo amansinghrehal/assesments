@@ -1,0 +1,35 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include<stdlib.h>
+int main()
+{
+    
+    int strSize=4, arrSize=4;
+    
+    char *arr=(char*)malloc(arrSize*(strSize+1));
+    char **str=(char**)malloc(sizeof(*str)*arrSize);
+    
+    int i;
+    for(i=0;i<arrSize;i++)
+    {
+        str[i]=&arr[i*(strSize+1)];
+    }
+    
+    for(i=0;i<arrSize;i++)
+    {
+        scanf("%s",str[i]);
+    }
+    
+    for(i=0;i<arrSize;i++)
+    {
+        printf("%s",str[i]);
+    }
+    return 0;
+}
