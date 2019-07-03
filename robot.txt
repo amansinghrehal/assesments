@@ -1,0 +1,116 @@
+ int i=0;
+    char *temp=input3;
+    int mat[input1][input2];
+    int flag=0;
+    while(input4[i]!='\0')
+    {
+       if(input4[i]=='R')
+       {
+           if(input3[4]=='E')
+           {
+               input3[4]='S';
+           }
+           if(input3[4]=='W')
+           {
+               input3[4]='N';
+           }
+           if(input3[4]=='N')
+           {
+               input3[4]='E';
+           }
+           if(input3[4]=='S')
+           {
+               input3[4]='W';
+           }
+       } 
+
+       else if(input4[i]=='L')
+       {
+           if(input3[4]=='E')
+           {
+               input3[4]='N';
+           }
+           if(input3[4]=='W')
+           {
+               input3[4]='S';
+           }
+           if(input3[4]=='N')
+           {
+               input3[4]='W';
+           }
+           if(input3[4]=='S')
+           {
+               input3[4]='E';
+           }
+       } 
+
+       else if(input4[i]=='M')
+       {
+           if(input3[4]=='E')
+           {
+                if(input3[2]<(input2-1))
+                {
+                    input3[2]=((input3[2]-48)+1)+48;
+                }
+                else
+                {
+                    input3[5]='-';
+                    input3[6]='E';
+                    input3[7]='R';
+                    flag=1;
+                    break;
+                }
+           }
+           else if(input3[4]=='W')
+           {
+               if(input3[2]>0)
+                {
+                    input3[2]=((input3[0]-48)-1)+48;
+                }
+                else
+                {
+                    input3[5]='-';
+                    input3[6]='E';
+                    input3[7]='R';
+                    flag=1;
+                    break;
+                }
+           }
+
+           else if(input3[4]=='N')
+           {
+               if(input3[0]>0)
+                {
+                    input3[0]=((input3[0]-48)-1)+48;
+                }
+                else
+                {
+                    input3[5]='-';
+                    input3[6]='E';
+                    input3[7]='R';
+                    flag=1;
+                    break;
+                }
+           }
+           else if(input3[4]=='S')
+           {
+               if(input3[0]<(input1-1))
+                {
+                    input3[0]=((input3[0]-48)+1)+48;
+                }
+                else
+                {
+                    input3[5]='-';
+                    input3[6]='E';
+                    input3[7]='R';
+                    flag=1;
+                    break;
+                }
+           }
+       }
+       if(flag || input4[i+1]=='\0')
+        break;
+       i=i+2;
+    }
+
+    return input3;
