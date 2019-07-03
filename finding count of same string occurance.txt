@@ -34,6 +34,7 @@ int main()
         k=0;
         l=0;
         flag=0;
+        
         for(j=i;j<(i+4);j++)
         {
             if(input[j]=='\0')
@@ -67,6 +68,8 @@ int main()
             if(flag1)
                 break;
             sub1[l]='\0';
+            
+           
             if(strcmp(sub,sub1)==0)
             {
                // printf("%s  %s\n",sub,sub1);
@@ -77,7 +80,7 @@ int main()
             j++;
         }
         
-        printf("\n\n");
+       
         if(max<=counter)
         {
             if(n!=0)
@@ -85,6 +88,7 @@ int main()
                 printf("%s  %s\n",out[n-1].str,sub);
                 if(strcmp(out[n-1].str,sub)!=0)
                 {
+                   // printf("%d\n",n);
                     max=counter;
                     out[n].count=max;
                     out[n].str=sub;
@@ -94,17 +98,18 @@ int main()
             }
             else
             {
+              //  printf("%s\n",sub);
                 max=counter;
                 out[n].count=max;
                 out[n].str=sub;
                 n++;
-               // printf("%d  %s\n",counter,sub);
             }
         }
         counter=0;
         i++;
     }
-   /* for(i=0;i<n;i++)
+   /* printf("%d\n",n);
+   for(i=0;i<n;i++)
     {
         printf("%d  %s\n",out[i].count,out[i].str);
     }*/
