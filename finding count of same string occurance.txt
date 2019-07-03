@@ -16,7 +16,7 @@ struct output
 };
 int main()
 {
-    struct output out[20];
+    struct output out[100];
     int i=0;
     char sub[5];
     char sub1[5];
@@ -48,11 +48,12 @@ int main()
         if(flag)
             break;
         sub[k]='\0';
+        
         k=0;
         j=0;
         flag1=0;
         while(1)
-        {
+        { 
             for(k=j;k<(j+4);k++)
             {
                 if(input[k]=='\0')
@@ -68,7 +69,6 @@ int main()
             if(flag1)
                 break;
             sub1[l]='\0';
-            
            
             if(strcmp(sub,sub1)==0)
             {
@@ -80,38 +80,22 @@ int main()
             j++;
         }
         
-       
         if(max<=counter)
         {
-            if(n!=0)
-            {
-                printf("%s  %s\n",out[n-1].str,sub);
-                if(strcmp(out[n-1].str,sub)!=0)
-                {
-                   // printf("%d\n",n);
-                    max=counter;
-                    out[n].count=max;
-                    out[n].str=sub;
-                    n++;
-                 //   printf("%d  %s\n",counter,sub);
-                }
-            }
-            else
-            {
-              //  printf("%s\n",sub);
-                max=counter;
-                out[n].count=max;
-                out[n].str=sub;
-                n++;
-            }
+            max=counter;
+            out[n].count=max;
+            out[n].str=sub;
+           // printf("%s  %d\n",out[n].str,out[n].count);
+            n++;
         }
         counter=0;
         i++;
+        printf("%s  %d  %d\n",out[n-1].str,out[n-1].count,n-1);
     }
-   /* printf("%d\n",n);
-   for(i=0;i<n;i++)
+    printf("\n\n%d\n",n);
+    for(i=0;i<n;i++)
     {
-        printf("%d  %s\n",out[i].count,out[i].str);
-    }*/
+        printf("%s  %d\n",out[i].str,out[i].count);
+    }
     return 0;
 }
