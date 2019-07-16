@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+struct node *head=NULL;
+struct node *current=NULL;
+void insertFirst(int data)
+{
+    struct node *temp=(struct node*)malloc(sizeof(struct node));
+    
+    temp->data=data;
+    temp->next=head;
+    
+    head=temp;
+    
+    
+}
+
+void insertlast(int data)
+{
+    struct node *temp=(struct node*)malloc(sizeof(struct node));
+    temp->data=data;
+    temp->next=NULL;
+    
+    struct node *last;
+    last=head;
+    if(last==NULL)
+    {
+        last=temp;
+    }
+    else
+    {
+            while(last->next!=NULL)
+        {
+            last=last->next;
+        }
+        last->next=temp;
+    }
+    
+}
+void print()
+{
+    struct node *temp=(struct node*)malloc(sizeof(struct node));
+    temp=head;
+    while(temp!=NULL)
+    {
+        printf("%d ",temp->data);
+        temp=temp->next;
+    }
+  
+}
+
+void deleteFirst()
+{
+    head=head->next;
+}
+
+void deleteLast()
+{
+    struct node *temp=(struct node*)malloc(sizeof(struct node));
+    
+    temp=head;
+    if(temp->next==NULL)
+    {
+         head=head->next;
+        
+    }
+    else
+    {
+        while(temp->next->next!=NULL)
+        {
+            temp=temp->next;
+        }
+        temp->next=NULL;
+    }
+    
+   
+    
+}
+int main()
+{
+    insertFirst(3);
+    insertFirst(34);
+    insertFirst(45);
+    insertFirst(2);
+    insertFirst(9);
+    insertlast(23);
+    deleteFirst();
+    deleteLast();
+    
+    print();
+    return 0;
+}
